@@ -6,12 +6,15 @@ import Location from './Location';
 function App() {
   const [yelpList, setYelpList] = useState(['1', '2', '3']);
   const [location, setLocation] = useState('');
+  const [searchInput, setSearchInput] = useState('');
   const globalStates = useMemo(() => ({
     yelpList,
     setYelpList,
     location,
     setLocation,
-  }), [yelpList, location]);
+    searchInput,
+    setSearchInput,
+  }), [yelpList, location, searchInput]);
 
   return (
     <GlobalContext.Provider value={globalStates}>
