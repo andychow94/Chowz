@@ -4,7 +4,6 @@ import GlobalContext from '../GlobalContext';
 
 function Location() {
   const globalStates = useContext(GlobalContext);
-  const googleUrl = 'https://maps.googleapis.com/maps/api/geocode/json?';
   function updateLocation(event) {
     event.preventDefault();
     globalStates.setLocation(event.target.value);
@@ -19,8 +18,8 @@ function Location() {
     if (globalStates.location && globalStates.searchInput !== undefined) {
       axios.get('/location', { params: { location: globalStates.location, input: globalStates.searchInput } })
         .then((result) => {
-          console.log(result.data);
-          globalStates.setYelpList(result.data);
+          console.log(result.data.businesses);
+          globalStates.setYelpList(result.data.businesses);
         })
         .catch((err) => {
           console.log('Error in search:', err);

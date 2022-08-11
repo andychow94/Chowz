@@ -4,17 +4,20 @@ import RestaurantList from './RestaurantList';
 import Location from './Location';
 
 function App() {
-  const [yelpList, setYelpList] = useState(['1', '2', '3']);
+  const [yelpList, setYelpList] = useState([]);
+  const [userList, setUserList] = useState([]);
   const [location, setLocation] = useState('');
   const [searchInput, setSearchInput] = useState('');
   const globalStates = useMemo(() => ({
     yelpList,
     setYelpList,
+    userList,
+    setUserList,
     location,
     setLocation,
     searchInput,
     setSearchInput,
-  }), [yelpList, location, searchInput]);
+  }), [yelpList, location, searchInput, userList]);
 
   return (
     <GlobalContext.Provider value={globalStates}>
