@@ -1,22 +1,11 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const db = mongoose.connect('mongodb://localhost:27017/userList')
+  .then((connection) => {
+    console.log('Successfully connected to Mongo');
+  })
+  .catch((err) => {
+    console.log('Unable to connect:', err);
+  });
 
-const userListSchema = new Schema({
-  id: String,
-  url: String,
-  rating: Number,
-  review_count: Number,
-  price: String,
-  name: String,
-  address_1: String,
-  address_2: String,
-  phone: String,
-  time: String,
-  hour: Number,
-  minutes: Number,
-});
-
-const userList = mongoose.model('userList', userListSchema);
-
-module.exports = userList;
+module.exports = db;

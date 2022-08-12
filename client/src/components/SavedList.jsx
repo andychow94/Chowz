@@ -1,0 +1,37 @@
+/* eslint-disable max-len */
+import React, { useEffect, useState, useContext } from 'react';
+import axios from 'axios';
+import styled from 'styled-components';
+import GlobalContext from '../GlobalContext';
+import Saved from './Saved';
+
+function SavedList() {
+  const globalStates = useContext(GlobalContext);
+  // const list = useRef(null);
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    axios.get('/list')
+      .then((result) => {
+        console.log('Retrieved List:', result);
+        // list.current = result.data;
+        setList(result.data);
+      })
+      .catch((err) => {
+        console.log('Error in retrieving list', err);
+      });
+  }, [globalStates.userList]);
+  return (
+    <div>
+      <Text>
+        {list.length > 0 && 'Saved Places:'}
+      </Text>
+      {list.length > 0 && list.map((store, i) => <Saved store={store} key={i} />)}
+    </div>
+  );
+}
+
+const Text = styled.div`
+  text-align: center;
+`;
+
+export default SavedList;

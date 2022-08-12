@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
 import axios from 'axios';
 import GlobalContext from '../GlobalContext';
 
@@ -27,19 +28,38 @@ function Location() {
     }
   }
   return (
-    <form onSubmit={(event) => search(event)}>
-      <label>
-        Food/Restaurant:
-        <input type="text" required onChange={(event) => updateSearch(event)} />
-      </label>
-      <br />
-      <label>
-        Address/Location:
-        <input type="text" required onChange={(event) => updateLocation(event)} />
-        <button type="submit">Search</button>
-      </label>
-    </form>
+    <Form onSubmit={(event) => search(event)}>
+      <Label>
+        Search by Food/Restaurant:
+        <Input type="text" required onChange={(event) => updateSearch(event)} />
+      </Label>
+      <Label>
+        Enter Address/Zip Code:
+        <Input type="text" required onChange={(event) => updateLocation(event)} />
+        <Button type="submit">Search</Button>
+      </Label>
+    </Form>
   );
 }
+
+const Form = styled.form`
+  display: flex;
+  justify-content: center;
+`;
+
+const Label = styled.label`
+  padding: 1em;
+  font-size: 1.1em;
+`;
+
+const Input = styled.input`
+  border-radius: 5px;
+  font-size: 1.1em;
+`;
+
+const Button = styled.button`
+  border-radius: 5px;
+  font-size: 1.1em;
+`;
 
 export default Location;
