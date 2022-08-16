@@ -14,7 +14,9 @@ function SavedList() {
       .then((result) => {
         console.log('Retrieved List:', result);
         // list.current = result.data;
+        result.data.sort((a, b) => a.day - b.day || a.hour - b.hour || a.minutes - b.minutes);
         setList(result.data);
+        console.log(result.data);
       })
       .catch((err) => {
         console.log('Error in retrieving list', err);

@@ -3,7 +3,7 @@ require('dotenv').config();
 
 module.exports.getCoords = (req, res) => {
   // console.log(req.query.location);
-  const address = req.query.location.split(' ').join('%');
+  const address = req.query.location.split(' ').join('%20');
   const textInput = req.query.input.split(' ').join('%');
   // console.log(address);
   const googleUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.GOOGLE_TOKEN}`;
