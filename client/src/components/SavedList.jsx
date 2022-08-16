@@ -34,6 +34,8 @@ function SavedList() {
 
 const Text = styled.div`
   text-align: center;
+  font-weight: bold;
+  font-size: large;
 `;
 
 export default SavedList;

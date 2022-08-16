@@ -6,7 +6,7 @@ module.exports.saveStore = (req, res) => {
   // res.sendStatus(200);
   userList.create(req.body)
     .then((result) => {
-      console.log('Saved:', result);
+      // console.log('Saved:', result);
       res.sendStatus(200);
     })
     .catch((err) => {
@@ -16,7 +16,7 @@ module.exports.saveStore = (req, res) => {
 
 module.exports.deleteStore = (req, res) => {
   console.log('Delete req.body:', req.body);
-  userList.findOneAndDelete({_id: req.body._id})
+  userList.findOneAndDelete({ _id: req.body._id })
     .then(() => {
       res.sendStatus(201);
     })
@@ -28,7 +28,7 @@ module.exports.deleteStore = (req, res) => {
 module.exports.findList = (req, res) => {
   userList.find({})
     .then((result) => {
-      console.log('Found List:', result);
+      // console.log('Found List:', result);
       res.status(200).send(result);
     })
     .catch((err) => {

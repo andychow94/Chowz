@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GlobalContext from '../GlobalContext';
 import RestaurantList from './RestaurantList';
 import Location from './Location';
+import Forecast from './Forecast';
 import SavedList from './SavedList';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         </Title>
         <TopBar>
           <Location />
+          {globalStates.yelpList.length > 0 && <Forecast />}
         </TopBar>
         <Bottom>
           <RestaurantList />
@@ -59,7 +61,7 @@ const Text = styled.div`
 
 const TopBar = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 `;
 
