@@ -35,6 +35,9 @@ function App() {
           <Location />
           {globalStates.yelpList.length > 0 && <Forecast />}
         </TopBar>
+        <TopRight>
+          <button>View Calendar</button>
+        </TopRight>
         <Bottom>
           <RestaurantList />
           <SavedList />
@@ -63,6 +66,15 @@ const TopBar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const TopRight = styled.div`
+  display: grid;
+  position: absolute;
+  top: 25px;
+  right: 75px;
+  width: 150px;
+  height: 50px;
 `;
 
 const Bottom = styled.div`
