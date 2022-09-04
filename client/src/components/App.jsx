@@ -5,6 +5,7 @@ import RestaurantList from './RestaurantList';
 import Location from './Location';
 import Forecast from './Forecast';
 import SavedList from './SavedList';
+import Calendar from './Calendar';
 
 function App() {
   const [yelpList, setYelpList] = useState([]);
@@ -36,7 +37,7 @@ function App() {
           {globalStates.yelpList.length > 0 && <Forecast />}
         </TopBar>
         <TopRight>
-          <button>View Calendar</button>
+          <Calendar />
         </TopRight>
         <Bottom>
           <RestaurantList />
@@ -71,10 +72,8 @@ const TopBar = styled.div`
 const TopRight = styled.div`
   display: grid;
   position: absolute;
-  top: 25px;
-  right: 75px;
-  width: 150px;
-  height: 50px;
+  top: 5%;
+  right: 5%;
 `;
 
 const Bottom = styled.div`
