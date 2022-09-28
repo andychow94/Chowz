@@ -27,7 +27,9 @@ function SavedList() {
       <Text>
         {list.length > 0 && 'Saved Places:'}
       </Text>
-      {list.length > 0 && list.map((store, i) => <Saved store={store} key={i} />)}
+      <SavedContainer>
+        {list.length > 0 && list.map((store, i) => <Saved store={store} key={i} />)}
+      </SavedContainer>
     </div>
   );
 }
@@ -36,6 +38,11 @@ const Text = styled.div`
   text-align: center;
   font-weight: bold;
   font-size: large;
+`;
+
+const SavedContainer = styled.div`
+  height: 50%;
+  overflow: hidden;
 `;
 
 export default SavedList;

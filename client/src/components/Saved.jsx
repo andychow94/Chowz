@@ -40,10 +40,9 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 1em;
-  background-color: #008000;
+  background-color: #FFF6BF;
   background-clip: context-box;
   border-radius: 15px;
-  margin: 5px;
 `;
 
 const Info = styled.div`
