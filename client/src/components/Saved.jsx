@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import GlobalContext from '../GlobalContext';
+import Stars from './Stars';
 
 function Saved({ store }) {
   const globalStates = useContext(GlobalContext);
@@ -23,7 +24,12 @@ function Saved({ store }) {
       <Image src={store.url} alt="store-front" />
       <Info>
         <button type="submit" onClick={() => deleteStore()}>Delete</button>
-        <div>{store.rating}/5 stars based on {store.review_count} reviews</div>
+        <div>
+          <Stars rating={store.rating} />
+          based on
+          {store.review_count}
+          reviews
+        </div>
         <div>Price Range: {store.price}</div>
         <div>{store.name}</div>
         <div>{store.address_1}</div>
