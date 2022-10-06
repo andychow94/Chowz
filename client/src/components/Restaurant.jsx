@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import GlobalContext from '../GlobalContext';
+import Stars from './Stars';
 
 function Restaurant({ store }) {
   const globalStates = useContext(GlobalContext);
@@ -50,7 +51,12 @@ function Restaurant({ store }) {
     <Container>
       <Image src={store.image_url} alt="store-front" />
       <Info>
-        <div>{store.rating}/5 stars based on {store.review_count} reviews</div>
+        <div>
+          <Stars rating={store.rating} />
+          based on
+          {store.review_count}
+          reviews
+        </div>
         <div>Price Range: {store.price}</div>
         <div>{store.name}</div>
         <div>{store.location.display_address[0]}</div>
@@ -93,10 +99,9 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 1em;
-  background-color: #FFFEBAD;
+  background-color: #FFEBAD;
   background-clip: context-box;
   border-radius: 15px;
-  margin: 5px;
 `;
 
 const Info = styled.div`

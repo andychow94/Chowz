@@ -41,8 +41,7 @@ const Text = styled.div`
 `;
 
 const SavedContainer = styled.div`
-  height: 50%;
-  overflow: hidden;
+
 `;
 
 export default SavedList;

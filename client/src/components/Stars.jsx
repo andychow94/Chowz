@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 function Stars({ rating }) {
   const percentage = rating * 20;
-  console.log(percentage);
   const emptyStars = [];
   const filledStars = [];
   for (let i = 0; i < 5; i += 1) {

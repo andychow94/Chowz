@@ -23,7 +23,6 @@ function Saved({ store }) {
     <Container>
       <Image src={store.url} alt="store-front" />
       <Info>
-        <button type="submit" onClick={() => deleteStore()}>Delete</button>
         <div>
           <Stars rating={store.rating} />
           based on
@@ -37,6 +36,7 @@ function Saved({ store }) {
         <div>{store.display_phone}</div>
         <div>{days[store.day]} {store.hour}:{store.minutes}</div>
       </Info>
+      <button type="submit" onClick={() => deleteStore()}>Delete</button>
     </Container>
   );
 }
