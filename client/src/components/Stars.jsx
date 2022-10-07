@@ -27,6 +27,7 @@ const StarsContainer = styled.div`
 
 const EmptyStars = styled.div`
   position: relative;
+  color: yellow;
 `;
 
 const FilledStars = styled.div`
@@ -35,6 +36,7 @@ const FilledStars = styled.div`
   left: 0px;
   width: ${({ percentage }) => percentage}%;
   overflow: hidden;
+  color: yellow;
 `;
 
 export default Stars;
