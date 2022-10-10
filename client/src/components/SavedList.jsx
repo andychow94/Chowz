@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, Fragment } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import GlobalContext from '../GlobalContext';
@@ -23,14 +23,14 @@ function SavedList() {
       });
   }, [globalStates.userList]);
   return (
-    <div>
+    <>
       <Text>
         {list.length > 0 && 'Saved Places:'}
       </Text>
       <SavedContainer>
         {list.length > 0 && list.map((store, i) => <Saved store={store} key={i} />)}
       </SavedContainer>
-    </div>
+    </>
   );
 }
 

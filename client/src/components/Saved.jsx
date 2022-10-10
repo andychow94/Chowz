@@ -4,7 +4,7 @@ import axios from 'axios';
 import GlobalContext from '../GlobalContext';
 import Stars from './Stars';
 
-function Saved({ store }) {
+function Saved({ store: { name } }) {
   const globalStates = useContext(GlobalContext);
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   function deleteStore() {
@@ -30,7 +30,7 @@ function Saved({ store }) {
           reviews
         </div>
         <div>Price Range: {store.price}</div>
-        <div>{store.name}</div>
+        <div>{name}</div>
         <div>{store.address_1}</div>
         <div>{store.address_2}</div>
         <div>{store.display_phone}</div>

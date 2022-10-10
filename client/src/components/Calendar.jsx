@@ -6,11 +6,12 @@ function Calendar() {
   const [display, setDisplay] = useState(false);
   const globalStates = useContext(GlobalContext);
   function showCalendar() {
+    console.log('clicked button')
     setDisplay(!display);
   }
   return (
     <div>
-      <Button onClick={() => showCalendar()}>View Calendar</Button>
+      <Button onClick={showCalendar}>View Calendar</Button>
     </div>
   );
 }
