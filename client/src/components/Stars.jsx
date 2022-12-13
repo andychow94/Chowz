@@ -19,15 +19,13 @@ function Stars({ rating }) {
 
 const StarsContainer = styled.div`
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 20px;
   width: 100px;
 `;
 
 const EmptyStars = styled.div`
   position: relative;
-  color: yellow;
+  color: black;
 `;
 
 const FilledStars = styled.div`

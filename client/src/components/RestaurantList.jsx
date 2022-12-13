@@ -6,12 +6,12 @@ import Restaurant from './Restaurant';
 function RestaurantList() {
   const globalStates = useContext(GlobalContext);
   return (
-    <div>
+    <Container>
       <Text>
         {globalStates.yelpList.length > 0 && 'Search Results:'}
       </Text>
       {globalStates.yelpList.map((store, i) => <Restaurant store={store} key={i} />)}
-    </div>
+    </Container>
   );
 }
 
@@ -19,6 +19,10 @@ const Text = styled.div`
   text-align: center;
   font-weight: bold;
   font-size: large;
+`;
+
+const Container = styled.div`
+  padding: 10px;
 `;
 
 export default RestaurantList;

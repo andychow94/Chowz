@@ -23,14 +23,12 @@ function SavedList() {
       });
   }, [globalStates.userList]);
   return (
-    <>
+    <SavedContainer>
       <Text>
         {list.length > 0 && 'Saved Places:'}
       </Text>
-      <SavedContainer>
-        {list.length > 0 && list.map((store, i) => <Saved store={store} key={i} />)}
-      </SavedContainer>
-    </>
+      {list.length > 0 && list.map((store, i) => <Saved store={store} key={i} />)}
+    </SavedContainer>
   );
 }
 
@@ -41,7 +39,7 @@ const Text = styled.div`
 `;
 
 const SavedContainer = styled.div`
-
+  padding: 10px;
 `;
 
 export default SavedList;

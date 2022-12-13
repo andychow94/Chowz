@@ -53,6 +53,6 @@ const Item = styled.div`
   text-align: center;
   padding: 10px;
   border-style: solid;
-  border-color: olive;
-  background-color: orange;
+  border-color: white;
+  background-color: #90EE90;
 `;

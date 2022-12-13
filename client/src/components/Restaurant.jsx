@@ -53,12 +53,12 @@ function Restaurant({ store }) {
       <Info>
         <div>
           <Stars rating={store.rating} />
-          based on
+          based on &nbsp;
           {store.review_count}
-          reviews
+          &nbsp; reviews
         </div>
         <div>Price Range: {store.price}</div>
-        <div>{store.name}</div>
+        <Name>{store.name}</Name>
         <div>{store.location.display_address[0]}</div>
         <div>{store.location.display_address[1]}</div>
         <div>{store.display_phone}</div>
@@ -121,6 +121,10 @@ const Image = styled.img`
 const Time = styled.form`
   display: flex;
   align-items: center;
+`;
+
+const Name = styled.div`
+  font-weight: bold;
 `;
 
 export default Restaurant;

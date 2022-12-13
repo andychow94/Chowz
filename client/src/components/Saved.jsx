@@ -4,7 +4,7 @@ import axios from 'axios';
 import GlobalContext from '../GlobalContext';
 import Stars from './Stars';
 
-function Saved({ store: { name } }) {
+function Saved({ store }) {
   const globalStates = useContext(GlobalContext);
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   function deleteStore() {
@@ -25,12 +25,12 @@ function Saved({ store: { name } }) {
       <Info>
         <div>
           <Stars rating={store.rating} />
-          based on
+          based on &nbsp;
           {store.review_count}
-          reviews
+          &nbsp; reviews
         </div>
         <div>Price Range: {store.price}</div>
-        <div>{name}</div>
+        <Name>{store.name}</Name>
         <div>{store.address_1}</div>
         <div>{store.address_2}</div>
         <div>{store.display_phone}</div>
@@ -63,6 +63,10 @@ const Image = styled.img`
   height: 10vw;
   object-fit: cover;
   border-radius: 4px;
+`;
+
+const Name = styled.div`
+  font-weight: bold;
 `;
 
 export default Saved;

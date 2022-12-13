@@ -12,6 +12,7 @@ module.exports.getCoords = (req, res) => {
   axios.get(googleUrl)
     .then((result) => {
       // console.log('Google map results:', result.data.results[0].geometry.location);
+      console.log(result);
       // console.log("textInput", textInput);
       const lat = result.data.results[0].geometry.location.lat;
       const lng = result.data.results[0].geometry.location.lng;
